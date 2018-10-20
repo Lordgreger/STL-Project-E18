@@ -31,3 +31,8 @@ ehthumbs.db
 [Bb]uild
 sysinfo.txt
 *.stackdump
+STLProject/Library/assetDatabase3
+
+*.dwlt
+
+*.log
