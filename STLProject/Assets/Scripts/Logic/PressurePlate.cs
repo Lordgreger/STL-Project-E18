@@ -20,7 +20,7 @@ public class PressurePlate : BooleanLogic {
 
     private void OnTriggerEnter2D(Collider2D col) {
         print("Entered collider!");
-        if (col.gameObject.tag == "Player") { // Player entered collider
+        if (col.gameObject.tag == "Player" || col.gameObject.tag == "Companion") { // Player entered collider
             state = true;
             onChange.Invoke();
             updateVisuals(state);
@@ -29,7 +29,7 @@ public class PressurePlate : BooleanLogic {
 
     private void OnTriggerExit2D(Collider2D col) {
         print("Exited collider!");
-        if (col.gameObject.tag == "Player") { // Player exited collider
+        if (col.gameObject.tag == "Player" || col.gameObject.tag == "Companion") { // Player exited collider
             state = false;
             onChange.Invoke();
             updateVisuals(state);
