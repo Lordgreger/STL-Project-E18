@@ -5,6 +5,20 @@ TagManager:
   serializedVersion: 2
   tags:
   - Companion
+  - leverFire
+  - leverEye
+  - leverLeaf
+  - leverWater
+  - FireSymbol
+  - EyeSymbol
+  - LeafSymbol
+  - WaterSymbol
+  - firstDoor
+  - interact
+  - hint 1
+  - hint 2
+  - hint 3
+  - hint 4
   layers:
   - Default
   - TransparentFX
