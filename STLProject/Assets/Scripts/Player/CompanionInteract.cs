@@ -14,6 +14,7 @@ public class CompanionInteract : MonoBehaviour {
     private void Start() {
         currentInteractable = null;
         interactionText.text = "";
+        c1.companionMovement.onStateChange.AddListener(updateInteractable);
     }
 
     private void Update() {
@@ -26,14 +27,32 @@ public class CompanionInteract : MonoBehaviour {
 
     public void setInteractable(CompanionInteractable interactable) {
         currentInteractable = interactable;
-        interactionText.text = "[E] " + interactable.interactionText;
-        ani.SetBool("Active", true);
+        updateInteractable();
     }
 
     public void removeInteractable(CompanionInteractable interactable) {
         if (currentInteractable == interactable) {
-            Debug.Log("Got called!");
+            //Debug.Log("Got called!");
             currentInteractable = null;
+            ani.SetBool("Active", false);
+        }
+    }
+
+    void updateInteractable() {
+        if (currentInteractable != null) {
+            if (c1.companionMovement.isFollowing()) {
+                interactionText.text = "[Q] " + c1.companionName + " " + currentInteractable.interactionText;
+                ani.SetBool("Active", true);
+            }
+            else if (c1.companionMovement.isMoving()) {
+                ani.SetBool("Active", false);
+            }
+            else {
+                interactionText.text = "[Q] " + c1.companionName + " follow me";
+                ani.SetBool("Active", true);
+            }
+        }
+        else {
             ani.SetBool("Active", false);
         }
     }

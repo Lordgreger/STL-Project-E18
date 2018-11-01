@@ -8,7 +8,7 @@ public class CompanionInteractionEvent : UnityEvent<CompanionInterface> {};
 public class CompanionInteractable : MonoBehaviour {
 
     public string interactionText;
-    public CompanionInteractionEvent onInteract;
+    public CompanionInteractionEvent onInteract = new CompanionInteractionEvent();
 
     CompanionInteract player;
 
