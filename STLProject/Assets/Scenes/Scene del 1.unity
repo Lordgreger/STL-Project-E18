@@ -639,13 +639,13 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 686911551}
-  m_LocalRotation: {x: -0, y: -0, z: 0.7071068, w: 0.7071068}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 3.4041882, y: 1.5310822, z: 0.12146488}
   m_LocalScale: {x: 0.40000024, y: 0.40000024, z: 0.4}
   m_Children: []
   m_Father: {fileID: 828898528}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &715055138
 GameObject:
   m_ObjectHideFlags: 0
@@ -7925,6 +7925,8 @@ GameObject:
   - component: {fileID: 782191936}
   - component: {fileID: 782191939}
   - component: {fileID: 782191938}
+  - component: {fileID: 782191941}
+  - component: {fileID: 782191940}
   m_Layer: 0
   m_Name: lever_eye
   m_TagString: leverEye
@@ -8036,6 +8038,52 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 7
+--- !u!114 &782191940
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 782191935}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d613cc92fac24c5f82e92fecfc32d8c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onChange:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  startingState: 2
+  symbol: {fileID: 686911553}
+--- !u!114 &782191941
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 782191935}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 96c10d322508c4643b14413c824ea1c6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactionText: to interact
+  onInteract:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 782191940}
+        m_MethodName: onInteract
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!1 &817857489
 GameObject:
   m_ObjectHideFlags: 0
@@ -8211,13 +8259,13 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 843188349}
-  m_LocalRotation: {x: -0, y: -0, z: 1, w: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 8.444188, y: 0.5810814, z: 0.12146488}
   m_LocalScale: {x: 0.4, y: 0.4, z: 0.4}
   m_Children: []
   m_Father: {fileID: 828898528}
   m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 180}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &941270079
 GameObject:
   m_ObjectHideFlags: 0
@@ -8286,13 +8334,13 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 941270079}
-  m_LocalRotation: {x: -0, y: -0, z: 0.7071068, w: -0.7071068}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 6.4141884, y: 1.5510807, z: 0.12146488}
   m_LocalScale: {x: 0.40000024, y: 0.40000024, z: 0.4}
   m_Children: []
   m_Father: {fileID: 828898528}
   m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 270}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &969663911
 GameObject:
   m_ObjectHideFlags: 0
@@ -8478,6 +8526,8 @@ GameObject:
   - component: {fileID: 1041825989}
   - component: {fileID: 1041825992}
   - component: {fileID: 1041825991}
+  - component: {fileID: 1041825994}
+  - component: {fileID: 1041825993}
   m_Layer: 0
   m_Name: lever_water
   m_TagString: leverWater
@@ -8589,6 +8639,52 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 8.61, y: 17.65}
   m_EdgeRadius: 0
+--- !u!114 &1041825993
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1041825988}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d613cc92fac24c5f82e92fecfc32d8c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onChange:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  startingState: 1
+  symbol: {fileID: 843188351}
+--- !u!114 &1041825994
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1041825988}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 96c10d322508c4643b14413c824ea1c6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactionText: to interact
+  onInteract:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1041825993}
+        m_MethodName: onInteract
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!1 &1084223725
 GameObject:
   m_ObjectHideFlags: 0
@@ -9866,6 +9962,11 @@ Prefab:
       propertyPath: m_isInputParsingRequired
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114466874216514966, guid: 89b5b8f6089b1064caecb6a9c65172ec,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 89b5b8f6089b1064caecb6a9c65172ec, type: 2}
   m_IsPrefabAsset: 0
@@ -9911,6 +10012,11 @@ Prefab:
     - target: {fileID: 1294613846703424, guid: 7daf56ae77b064ce78c3ec1b7f15cdda, type: 2}
       propertyPath: m_Name
       value: firstDoor
+      objectReference: {fileID: 0}
+    - target: {fileID: 114827421830880544, guid: 7daf56ae77b064ce78c3ec1b7f15cdda,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7daf56ae77b064ce78c3ec1b7f15cdda, type: 2}
@@ -9983,13 +10089,13 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1812688367}
-  m_LocalRotation: {x: -0, y: -0, z: -1, w: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 1.4841881, y: 0.5950813, z: 0.12146488}
   m_LocalScale: {x: 0.4, y: 0.4, z: 0.3}
   m_Children: []
   m_Father: {fileID: 828898528}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -180}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1863502017
 GameObject:
   m_ObjectHideFlags: 0
@@ -10001,6 +10107,8 @@ GameObject:
   - component: {fileID: 1863502018}
   - component: {fileID: 1863502020}
   - component: {fileID: 1863502021}
+  - component: {fileID: 1863502023}
+  - component: {fileID: 1863502022}
   m_Layer: 0
   m_Name: lever_fire
   m_TagString: leverFire
@@ -10112,9 +10220,84 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 7
+--- !u!114 &1863502022
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1863502017}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 96c10d322508c4643b14413c824ea1c6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactionText: to interact
+  onInteract:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1863502023}
+        m_MethodName: onInteract
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+--- !u!114 &1863502023
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1863502017}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d613cc92fac24c5f82e92fecfc32d8c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onChange:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  startingState: 3
+  symbol: {fileID: 1812688369}
 --- !u!1 &1868195709 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1294613846703424, guid: 7daf56ae77b064ce78c3ec1b7f15cdda,
+    type: 2}
+  m_PrefabInternal: {fileID: 1673076121}
+--- !u!114 &1868195710
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1868195709}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: feb04836d2f0b48ce98c27d4c8d53d33, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  symbols:
+  - {fileID: 1863502023}
+  - {fileID: 782191940}
+  - {fileID: 1911192403}
+  - {fileID: 1041825993}
+  code: 00000000000000000000000000000000
+  door: {fileID: 1868195713}
+  doorCollider: {fileID: 1868195712}
+--- !u!61 &1868195712 stripped
+BoxCollider2D:
+  m_CorrespondingSourceObject: {fileID: 61039302188304452, guid: 7daf56ae77b064ce78c3ec1b7f15cdda,
+    type: 2}
+  m_PrefabInternal: {fileID: 1673076121}
+--- !u!212 &1868195713 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 212569006805758652, guid: 7daf56ae77b064ce78c3ec1b7f15cdda,
     type: 2}
   m_PrefabInternal: {fileID: 1673076121}
 --- !u!1 &1911192398
@@ -10128,6 +10311,8 @@ GameObject:
   - component: {fileID: 1911192399}
   - component: {fileID: 1911192402}
   - component: {fileID: 1911192401}
+  - component: {fileID: 1911192404}
+  - component: {fileID: 1911192403}
   m_Layer: 0
   m_Name: lever_leaf
   m_TagString: leverLeaf
@@ -10239,6 +10424,52 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 8, y: 18.81}
   m_EdgeRadius: 0
+--- !u!114 &1911192403
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1911192398}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d613cc92fac24c5f82e92fecfc32d8c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onChange:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  startingState: 4
+  symbol: {fileID: 941270081}
+--- !u!114 &1911192404
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1911192398}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 96c10d322508c4643b14413c824ea1c6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactionText: to interact
+  onInteract:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1911192403}
+        m_MethodName: onInteract
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!1001 &1975110881
 Prefab:
   m_ObjectHideFlags: 0
