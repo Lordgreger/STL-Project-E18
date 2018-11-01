@@ -9,10 +9,14 @@ public class TimedPressurePlateDoor : MonoBehaviour {
     public Collider2D col;
     public SpriteRenderer rend;
 
+    public Sprite open;
+    public Sprite closed;
+
     private void Start() {
         foreach(BooleanLogic l in plates) {
             l.onChange.AddListener(checkSolution);
         }
+        rend.sprite = closed;
     }
 
     void checkSolution() {
@@ -22,7 +26,7 @@ public class TimedPressurePlateDoor : MonoBehaviour {
             }
         }
         col.enabled = false;
-        rend.enabled = false;
+        rend.sprite = open;
         this.enabled = false;
     }
 
