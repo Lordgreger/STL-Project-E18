@@ -9,11 +9,14 @@ public class CompanionInteractable : MonoBehaviour {
 
     public string interactionText;
     public CompanionInteractionEvent onInteract = new CompanionInteractionEvent();
+    [HideInInspector]
+    public string currentUser;
 
     CompanionInteract player;
 
     private void Start() {
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<CompanionInteract>();
+        currentUser = "";
     }
 
     public void interact(CompanionInterface i) {

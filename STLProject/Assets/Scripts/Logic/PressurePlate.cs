@@ -10,6 +10,7 @@ public class PressurePlate : BooleanLogic {
     public SpriteRenderer rend;
 
     public CompanionInteractable companionInteractable;
+    public string[] companionTexts;
 
     public int minWeightToActivate;
 
@@ -67,9 +68,13 @@ public class PressurePlate : BooleanLogic {
 
     void onCompanionInteract(CompanionInterface i) {
         if (i.companionMovement.isFollowing()) {
+            companionInteractable.interactionText = companionTexts[1];
+            companionInteractable.currentUser = i.companionID;
             i.companionMovement.setTargetAndMove(transform);
         }
         else {
+            companionInteractable.interactionText = companionTexts[0];
+            companionInteractable.currentUser = "";
             i.companionMovement.release(transform);
         }
     }

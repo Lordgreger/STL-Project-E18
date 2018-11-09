@@ -9,13 +9,11 @@ public class CompanionInteract : MonoBehaviour {
     public CompanionInterface c1;
     public TextMeshProUGUI c1InteractionText;
     public Animator c1Ani;
-    public CompanionInteractable c1ActiveInteractable;
 
     // Companion 2
     public CompanionInterface c2;
     public TextMeshProUGUI c2InteractionText;
     public Animator c2Ani;
-    public CompanionInteractable c2ActiveInteractable;
 
     CompanionInteractable currentInteractable;
 
@@ -24,11 +22,9 @@ public class CompanionInteract : MonoBehaviour {
 
         c1InteractionText.text = "";
         c1.companionMovement.onStateChange.AddListener(updateC1);
-        c1ActiveInteractable = null;
 
-        c2InteractionText.text = "";
-        c2.companionMovement.onStateChange.AddListener(updateC2);
-        c2ActiveInteractable = null;
+        //c2InteractionText.text = "";
+        //c2.companionMovement.onStateChange.AddListener(updateC2);
     }
 
     private void Update() {
@@ -54,26 +50,12 @@ public class CompanionInteract : MonoBehaviour {
 
     void updateC1() {
         if (currentInteractable != null) {
-            if (c1.companionMovement.isFollowing() && ()) {
-                c1InteractionText.text = "[Q] " + c1.companionName + " " + currentInteractable.interactionText;
+            if (currentInteractable.currentUser == c1.companionID || currentInteractable.currentUser == "") {
+                c1InteractionText.text = "[1] " + c1.companionName + " " + currentInteractable.interactionText;
                 c1Ani.SetBool("Active", true);
-            }
-            else if (c1.companionMovement.isMoving()) {
-                c1Ani.SetBool("Active", false);
-            }
-            else {
-                if (c1ActiveInteractable == currentInteractable) {
-                    c1InteractionText.text = "[Q] " + c1.companionName + " follow me";
-                    c1Ani.SetBool("Active", true);
-                }
-                c1InteractionText.text = "[Q] " + c1.companionName + " follow me";
-                c1Ani.SetBool("Active", true);
+                return;
             }
         }
-        else {
-            c1Ani.SetBool("Active", false);
-            c2Ani.SetBool("Active", false);
-        }
+        c1Ani.SetBool("Active", false);
     }
-
 }
