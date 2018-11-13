@@ -19,43 +19,66 @@ public class CompanionInteract : MonoBehaviour {
 
     private void Start() {
         currentInteractable = null;
-
-        c1InteractionText.text = "";
-        c1.companionMovement.onStateChange.AddListener(updateC1);
-
-        //c2InteractionText.text = "";
-        //c2.companionMovement.onStateChange.AddListener(updateC2);
+        c1.companionMovement.onStateChange.AddListener(updateTexts);
+        c2.companionMovement.onStateChange.AddListener(updateTexts);
     }
 
     private void Update() {
         if (currentInteractable != null) {
-            if (Input.GetKeyDown(KeyCode.Alpha1)) {
-                currentInteractable.interact(c1);
+            if (currentInteractable.currentUser == c1.companionID) {
+                if (Input.GetKeyDown(KeyCode.Alpha1)) {
+                    currentInteractable.interact(c1);
+                }
+            }
+            else if (currentInteractable.currentUser == c2.companionID) {
+                if (Input.GetKeyDown(KeyCode.Alpha2)) {
+                    currentInteractable.interact(c2);
+                }
+            }
+            else {
+                if (Input.GetKeyDown(KeyCode.Alpha1)) {
+                    currentInteractable.interact(c1);
+                }
+                else if (Input.GetKeyDown(KeyCode.Alpha2)) {
+                    currentInteractable.interact(c2);
+                }
             }
         }
     }
 
     public void setInteractable(CompanionInteractable interactable) {
         currentInteractable = interactable;
-        updateC1();
+        updateTexts();
     }
 
     public void removeInteractable(CompanionInteractable interactable) {
         if (currentInteractable == interactable) {
             //Debug.Log("Got called!");
             currentInteractable = null;
-            c1Ani.SetBool("Active", false);
+            updateTexts();
         }
     }
 
-    void updateC1() {
-        if (currentInteractable != null) {
-            if (currentInteractable.currentUser == c1.companionID || currentInteractable.currentUser == "") {
-                c1InteractionText.text = "[1] " + c1.companionName + " " + currentInteractable.interactionText;
-                c1Ani.SetBool("Active", true);
-                return;
-            }
+    void updateTexts() {
+        if (currentInteractable == null) {
+            c1Ani.SetBool("Active", false);
+            c2Ani.SetBool("Active", false);
         }
-        c1Ani.SetBool("Active", false);
+        else if (currentInteractable.currentUser == c1.companionID) {
+            c1InteractionText.text = "[1] " + c1.companionName + " " + currentInteractable.interactionText;
+            c1Ani.SetBool("Active", true);
+            c2Ani.SetBool("Active", false);
+        }
+        else if (currentInteractable.currentUser == c2.companionID) {
+            c1Ani.SetBool("Active", false);
+            c2InteractionText.text = "[2] " + c2.companionName + " " + currentInteractable.interactionText;
+            c2Ani.SetBool("Active", true);
+        }
+        else {
+            c1InteractionText.text = "[1] " + c1.companionName + " " + currentInteractable.interactionText;
+            c1Ani.SetBool("Active", true);
+            c2InteractionText.text = "[2] " + c2.companionName + " " + currentInteractable.interactionText;
+            c2Ani.SetBool("Active", true);
+        }
     }
 }
