@@ -104,6 +104,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   companionName: Professor
+  companionID: c1
   companionMovement: {fileID: 114951152247397184}
 --- !u!114 &114951152247397184
 MonoBehaviour:
