@@ -19,17 +19,8 @@ public class CompanionInteract : MonoBehaviour {
 
     private void Start() {
         currentInteractable = null;
-<<<<<<< HEAD
-
-        c1InteractionText.text = "";
-        c1.companionMovement.onStateChange.AddListener(updateC1);
-
-        //c2InteractionText.text = "";
-        //c2.companionMovement.onStateChange.AddListener(updateC2);
-=======
         c1.companionMovement.onStateChange.AddListener(updateTexts);
         c2.companionMovement.onStateChange.AddListener(updateTexts);
->>>>>>> master
     }
 
     private void Update() {
@@ -68,17 +59,6 @@ public class CompanionInteract : MonoBehaviour {
         }
     }
 
-<<<<<<< HEAD
-    void updateC1() {
-        if (currentInteractable != null) {
-            if (currentInteractable.currentUser == c1.companionID || currentInteractable.currentUser == "") {
-                c1InteractionText.text = "[1] " + c1.companionName + " " + currentInteractable.interactionText;
-                c1Ani.SetBool("Active", true);
-                return;
-            }
-        }
-        c1Ani.SetBool("Active", false);
-=======
     void updateTexts() {
         if (currentInteractable == null) {
             c1Ani.SetBool("Active", false);
@@ -100,6 +80,5 @@ public class CompanionInteract : MonoBehaviour {
             c2InteractionText.text = "[2] " + c2.companionName + " " + currentInteractable.interactionText;
             c2Ani.SetBool("Active", true);
         }
->>>>>>> master
     }
 }
