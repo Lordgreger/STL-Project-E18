@@ -5,8 +5,8 @@ using UnityEngine;
 public class Health : MonoBehaviour {
 
     public float maxHealth;
-
-    public float health;
+    public PopUpDisplayer pop;
+    private float health;
 
 
     private void Start() {
@@ -15,5 +15,6 @@ public class Health : MonoBehaviour {
 
     public void damage(float damage) {
         health -= damage;
+        pop.spawnText("-"+damage);
     }
 }

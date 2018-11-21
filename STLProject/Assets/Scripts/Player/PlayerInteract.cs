@@ -13,7 +13,6 @@ public class PlayerInteract : MonoBehaviour {
 
     private void Start() {
         currentInteractable = null;
-        interactionText.text = "";
     }
 
     private void Update() {
