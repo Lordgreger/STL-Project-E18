@@ -7,6 +7,10 @@ public class SpearTrap : BaseTrapFloor {
     public float checkingCooldown;
     public float damage;
 
+    public Sprite notTriggered;
+    public Sprite triggered;
+    public SpriteRenderer rend;
+
     private void Start() {
         StartCoroutine(checkTrap());
     }
@@ -18,9 +22,15 @@ public class SpearTrap : BaseTrapFloor {
                 print("damaging stuff: " + onTrap.Count);
                 foreach (Health h in onTrap) {
                     h.damage(damage);
+                    if (h.gameObject.tag == "Player") {
+                        h.gameObject.GetComponent<PlayerMovement>().addTimedSlowEffect(0.33f);
+                    }
                     print("Damaged " + h.gameObject.tag + " with " + damage);
                 }
-                yield return new WaitForSeconds(damageCooldown);
+                rend.sprite = triggered;
+                yield return new WaitForSeconds(damageCooldown * (3f / 4f));
+                rend.sprite = notTriggered;
+                yield return new WaitForSeconds(damageCooldown * (1f / 4f));
             }
             else {
                 yield return new WaitForSeconds(checkingCooldown);
