@@ -19,6 +19,7 @@ TagManager:
   - hint 2
   - hint 3
   - hint 4
+  - Trap
   layers:
   - Default
   - TransparentFX

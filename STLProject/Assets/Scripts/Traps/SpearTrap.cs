@@ -17,15 +17,15 @@ public class SpearTrap : BaseTrapFloor {
 
     IEnumerator checkTrap() {
         while(true) {
-            print("Checked Trap, count: " + onTrap.Count);
+            //print("Checked Trap, count: " + onTrap.Count);
             if (onTrap.Count > 0) {
-                print("damaging stuff: " + onTrap.Count);
+                //print("damaging stuff: " + onTrap.Count);
                 foreach (Health h in onTrap) {
                     h.damage(damage);
                     if (h.gameObject.tag == "Player") {
                         h.gameObject.GetComponent<PlayerMovement>().addTimedSlowEffect(0.33f);
                     }
-                    print("Damaged " + h.gameObject.tag + " with " + damage);
+                    //print("Damaged " + h.gameObject.tag + " with " + damage);
                 }
                 rend.sprite = triggered;
                 yield return new WaitForSeconds(damageCooldown * (3f / 4f));
