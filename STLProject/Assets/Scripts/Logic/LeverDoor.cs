@@ -8,6 +8,8 @@ public class LeverDoor : MonoBehaviour {
     public List<BooleanLogic> levers = new List<BooleanLogic>();
     public SpriteRenderer rend;
     public Collider2D col;
+    public Sprite open;
+    public Sprite closed;
 
     private void Start() {
         foreach(BooleanLogic lever in levers) {
@@ -26,13 +28,13 @@ public class LeverDoor : MonoBehaviour {
         setDoor(true);
     }
 
-    void setDoor(bool open) {
-        if (open) {
-            rend.enabled = false;
+    void setDoor(bool isOpen) {
+        if (isOpen) {
+            rend.sprite = open;
             col.enabled = false;
         }
         else {
-            rend.enabled = true;
+            rend.sprite = closed;
             col.enabled = true;
         }
     }
