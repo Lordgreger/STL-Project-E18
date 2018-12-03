@@ -17,7 +17,9 @@ public class PressurePlate : BooleanLogic {
     int weight;
 
     private void Start() {
-        companionInteractable.onInteract.AddListener(onCompanionInteract);
+        if (companionInteractable != null) {
+            companionInteractable.onInteract.AddListener(onCompanionInteract);
+        }
         weight = 0;
     }
 
@@ -33,7 +35,7 @@ public class PressurePlate : BooleanLogic {
     }
 
     private void OnTriggerEnter2D(Collider2D col) {
-        print("Entered collider!");
+        //print("Entered collider!");
         if (col.gameObject.tag == "Player" || col.gameObject.tag == "Companion") { // Player entered collider
             weight++;
             getNewState();
@@ -41,7 +43,7 @@ public class PressurePlate : BooleanLogic {
     }
 
     private void OnTriggerExit2D(Collider2D col) {
-        print("Exited collider!");
+        //print("Exited collider!");
         if (col.gameObject.tag == "Player" || col.gameObject.tag == "Companion") { // Player exited collider
             weight--;
             getNewState();

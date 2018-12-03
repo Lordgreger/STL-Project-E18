@@ -9,14 +9,10 @@ public class ArrowCreator : MonoBehaviour {
     public Transform target;
 
 	public void createArrow() {
-        Instantiate(arrowPrefab, transform).GetComponent<Arrow>().setupArrow(target, speed, lifetime, damage);
-    }
+        GameObject arrow = Instantiate(arrowPrefab);
+        arrow.transform.position = this.transform.position;
+        arrow.GetComponent<Arrow>().setupArrow(target, speed, lifetime, damage);
 
-    private void OnTriggerEnter2D(Collider2D col) {
-        if (col.gameObject.tag == "Player") {
-            createArrow();
-        }     
     }
-
 
 }

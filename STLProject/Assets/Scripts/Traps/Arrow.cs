@@ -9,12 +9,24 @@ public class Arrow : MonoBehaviour {
     bool active = false;
 
     public void setupArrow(Transform target, float speed, float lifetime, float damage) {
-        rt.LookAt(target);
-        rt.rotation = Quaternion.Euler(0, 0, rt.rotation.eulerAngles.x + 90f);
-        rb.velocity = target.localPosition.normalized * speed;
+        pointTowardsTarget(target);
+        rb.velocity = (target.position - transform.position).normalized * speed;
         this.lifetime = lifetime;
         this.damage = damage;
         active = true;
+    }
+
+    void pointTowardsTarget(Transform target) {
+        /*
+        rt.LookAt(target);
+        if ((transform.position.x - target.transform.position.x) < 0)
+            rt.rotation = Quaternion.Euler(0, 0, rt.rotation.eulerAngles.x - 90f);
+        else
+            rt.rotation = Quaternion.Euler(0, 0, rt.rotation.eulerAngles.x - 90f);
+        */
+        Vector3 toTarget = (transform.position - target.position);
+        float angle = Mathf.Atan2(toTarget.y, toTarget.x) * Mathf.Rad2Deg;
+        rt.Rotate(new Vector3(0, 0, 1), angle + 90.0f);
     }
 
     private void Update() {

@@ -31,7 +31,7 @@ public class PlayerInteract : MonoBehaviour {
 
     public void removeInteractable(Interactable interactable) {
         if (currentInteractable == interactable) {
-            Debug.Log("Got called!");
+            //Debug.Log("Got called!");
             currentInteractable = null;
             ani.SetBool("Active", false);
         }

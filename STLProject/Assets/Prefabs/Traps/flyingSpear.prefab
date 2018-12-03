@@ -23,7 +23,8 @@ GameObject:
   - component: {fileID: 61500035932328882}
   - component: {fileID: 50936671782666338}
   - component: {fileID: 114936352181930030}
-  m_Layer: 0
+  - component: {fileID: 114946139825770822}
+  m_Layer: 12
   m_Name: flyingSpear
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -88,6 +89,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rt: {fileID: 224141376092305640}
   rb: {fileID: 50936671782666338}
+--- !u!114 &114946139825770822
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1198703802890986}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f62a8bcd5bcaa744ba2b6255ea045438, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rend: {fileID: 212298210957780614}
+  resolutionScale: 32
+  useOffset: 0
+  offset: 0
 --- !u!212 &212298210957780614
 SpriteRenderer:
   m_ObjectHideFlags: 1

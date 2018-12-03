@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 212368832158342600}
   - component: {fileID: 61606774398682264}
   - component: {fileID: 114734539935156240}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: SpearFloorTrap
   m_TagString: Untagged
   m_Icon: {fileID: 0}

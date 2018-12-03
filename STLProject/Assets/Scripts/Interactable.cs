@@ -15,19 +15,19 @@ public class Interactable : MonoBehaviour {
     }
 
     public void interact() {
-        print("Interact!");
+        //print("Interact!");
         onInteract.Invoke();
     }
 
     private void OnTriggerEnter2D(Collider2D col) {
-        print("Entered collider!");
+        //print("Entered collider!");
         if (col.gameObject.tag == "Player") { // Player entered collider
             player.setInteractable(this);
         }
     }
 
     private void OnTriggerExit2D(Collider2D col) {
-        print("Exited collider!");
+        //print("Exited collider!");
         if (col.gameObject.tag == "Player") { // Player exited collider
             player.removeInteractable(this);
         }
