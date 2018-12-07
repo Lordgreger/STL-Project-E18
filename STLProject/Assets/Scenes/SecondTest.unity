@@ -160,9 +160,7 @@ Prefab:
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 65986bea05ae9054680c1efdbd413fd8, type: 2}
   m_IsPrefabAsset: 0
-<<<<<<< Updated upstream
 --- !u!1001 &953718531
-=======
 --- !u!1 &202588839
 GameObject:
   m_ObjectHideFlags: 0
@@ -1038,7 +1036,6 @@ Tilemap:
     e32: 0
     e33: 1
 --- !u!1001 &591525795
->>>>>>> Stashed changes
 Prefab:
   m_ObjectHideFlags: 0
   serializedVersion: 2
