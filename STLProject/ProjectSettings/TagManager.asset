@@ -20,6 +20,11 @@ TagManager:
   - hint 3
   - hint 4
   - Trap
+  - tablet
+  - door
+  - Placeholders
+  - Tablets
+  - CirclePlate
   layers:
   - Default
   - TransparentFX
