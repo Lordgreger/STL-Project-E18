@@ -6,7 +6,7 @@ public class ArrowCreator : MonoBehaviour {
 
     public GameObject arrowPrefab;
     public float damage, lifetime, speed;
-    public Transform target;
+    public Vector3 target;
 
 	public void createArrow() {
         GameObject arrow = Instantiate(arrowPrefab);

@@ -8,15 +8,15 @@ public class Arrow : MonoBehaviour {
     float lifetime, damage;
     bool active = false;
 
-    public void setupArrow(Transform target, float speed, float lifetime, float damage) {
+    public void setupArrow(Vector3 target, float speed, float lifetime, float damage) {
         pointTowardsTarget(target);
-        rb.velocity = (target.position - transform.position).normalized * speed;
+        rb.velocity = (target - transform.position).normalized * speed;
         this.lifetime = lifetime;
         this.damage = damage;
         active = true;
     }
 
-    void pointTowardsTarget(Transform target) {
+    void pointTowardsTarget(Vector3 target) {
         /*
         rt.LookAt(target);
         if ((transform.position.x - target.transform.position.x) < 0)
@@ -24,7 +24,7 @@ public class Arrow : MonoBehaviour {
         else
             rt.rotation = Quaternion.Euler(0, 0, rt.rotation.eulerAngles.x - 90f);
         */
-        Vector3 toTarget = (transform.position - target.position);
+        Vector3 toTarget = (transform.position - target);
         float angle = Mathf.Atan2(toTarget.y, toTarget.x) * Mathf.Rad2Deg;
         rt.Rotate(new Vector3(0, 0, 1), angle + 90.0f);
     }

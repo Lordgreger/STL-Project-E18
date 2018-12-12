@@ -6,6 +6,8 @@ public class SpearSpitterPlayerTarget : ArrowCreator {
     public float cooldown;
     public bool inRange;
 
+    Transform pTrans;
+
     private void Start() {
         inRange = false;
         StartCoroutine(fire());
@@ -13,7 +15,7 @@ public class SpearSpitterPlayerTarget : ArrowCreator {
 
     private void OnTriggerEnter2D(Collider2D col) {
         if (col.gameObject.tag == "Player") {
-            target = col.gameObject.transform;
+            pTrans = col.gameObject.transform;
             inRange = true;
         }
     }
@@ -27,6 +29,7 @@ public class SpearSpitterPlayerTarget : ArrowCreator {
     IEnumerator fire() {
         while (true) {  
             if (inRange) {
+                target = pTrans.position;
                 createArrow();
                 yield return new WaitForSeconds(cooldown);
             }
