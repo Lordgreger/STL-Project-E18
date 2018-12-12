@@ -17,7 +17,7 @@ public class LeverDoor : MonoBehaviour {
         }
     }
 
-    void checkLevers() {
+    protected virtual void checkLevers() {
         print("Got lever change!");
         foreach (BooleanLogic lever in levers) {
             if (lever.getState() == false) {
@@ -28,7 +28,7 @@ public class LeverDoor : MonoBehaviour {
         setDoor(true);
     }
 
-    void setDoor(bool isOpen) {
+    protected void setDoor(bool isOpen) {
         if (isOpen) {
             rend.sprite = open;
             col.enabled = false;

@@ -35,6 +35,7 @@ public class SpearSpitterCrossController : MonoBehaviour {
     }
 
     public void disableTrap () {
+        ssc.StopAllCoroutines();
         ssc.enabled = false;
     }
 

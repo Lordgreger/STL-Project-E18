@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 212558673706695944}
   - component: {fileID: 61475161442016208}
   - component: {fileID: 114866908459001382}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: StonePlate1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -39,7 +39,7 @@ GameObject:
   - component: {fileID: 4342220204323254}
   - component: {fileID: 61634352783089764}
   - component: {fileID: 114952648261715714}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: CompanionExtension
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -66,7 +66,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1187669916140778}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -3.280705, y: 6.76873, z: 0.53862005}
+  m_LocalPosition: {x: 2, y: 3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4342220204323254}

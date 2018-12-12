@@ -77,6 +77,7 @@ public class PressurePlate : BooleanLogic {
         else {
             companionInteractable.interactionText = companionTexts[0];
             companionInteractable.currentUser = "";
+            print("Got here");
             i.companionMovement.release(transform);
         }
     }

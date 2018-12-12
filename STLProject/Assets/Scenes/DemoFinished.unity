@@ -243,6 +243,11 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 114032067201127014, guid: 0e9b737b03acf9d49a692c1f3a272739,
+        type: 2}
+      propertyPath: m_Text
+      value: I create my lair with earthen string, and dispatch my prey with a biting  sting.
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0e9b737b03acf9d49a692c1f3a272739, type: 2}
   m_IsPrefabAsset: 0
@@ -26465,7 +26470,7 @@ MonoBehaviour:
     m_VerticalOverflow: 1
     m_LineSpacing: 1
   m_Text: I'm alive, but without breath; I'm as cold in life as in death; I'm never
-    thirsty, though I always drink
+    thirsty, though I always drink.
 --- !u!222 &1651215254
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -33201,7 +33206,7 @@ BoxCollider2D:
   m_Offset: {x: 0, y: 0.19}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0}
+    pivot: {x: 0.5, y: 0.125}
     oldSize: {x: 1, y: 1}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
@@ -33266,7 +33271,7 @@ BoxCollider2D:
   m_Offset: {x: 0, y: 0.19}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0}
+    pivot: {x: 0.5, y: 0.125}
     oldSize: {x: 1, y: 1}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5

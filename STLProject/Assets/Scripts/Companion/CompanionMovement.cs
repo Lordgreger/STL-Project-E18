@@ -61,9 +61,14 @@ public class CompanionMovement : MonoBehaviour {
     }
 
     public void release(Transform t) {
+        print("Gor here!");
+        print(target);
+        print(t);
+        print(state);
         if (state == State.waiting && target == t) {
             target = null;
             state = State.following;
+            print("Gor here!");
             onStateChange.Invoke();
         }
     }
@@ -108,12 +113,14 @@ public class CompanionMovement : MonoBehaviour {
     void stateMoving() {
         Vector3 dif = target.position - transform.position;
 
+        print(dif.magnitude);
         if (dif.magnitude > minTargetDistanceTeleport) {
             rb.velocity = dif.normalized * speed;
         }
         else {
             transform.position = target.position;
             rb.velocity = Vector2.zero;
+            print("Got here!");
             state = State.waiting;
             onStateChange.Invoke();
         }
