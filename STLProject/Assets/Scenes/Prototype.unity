@@ -50508,6 +50508,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1131813332}
   - component: {fileID: 1131813333}
+  - component: {fileID: 1131813334}
   m_Layer: 0
   m_Name: PlatesF
   m_TagString: Untagged
@@ -50552,6 +50553,37 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1373176052}
+        m_MethodName: setState
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+--- !u!114 &1131813334
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1131813331}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ee05396d53023844b04186e12fba603, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bools:
+  - {fileID: 529498664}
+  - {fileID: 981286159}
+  - {fileID: 1114947462}
+  change:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 44095771}
         m_MethodName: setState
         m_Mode: 6
         m_Arguments:
@@ -82994,7 +83026,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -2125266083
   m_SortingLayer: 1
-  m_SortingOrder: 1
+  m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: 0e7b03873f3604433974315c5b430549, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
