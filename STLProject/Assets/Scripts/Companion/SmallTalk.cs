@@ -85,10 +85,30 @@ public class SmallTalk : MonoBehaviour {
         if (otherCompanion.companionName == "Professor") { // All professor
             // S1
             List<SpeechInstance> s1 = new List<SpeechInstance>();
-            s1.Add(new SpeechInstance("All this running is good for your health Professor", 6f, 5f, c1));
-            s1.Add(new SpeechInstance("I fear it will end my life before it does it any good though", 6f, 5f, !c1));
-            s1.Add(new SpeechInstance("'Chuckles'", 6f, 5f, c1));
+            s1.Add(new SpeechInstance("All this running is good for your health Professor.", 6f, 6f, c1));
+            s1.Add(new SpeechInstance("I fear it will end my life before it does it any good though.", 6f, 6f, !c1));
+            s1.Add(new SpeechInstance("'Chuckles'", 6f, 6f, c1));
             output.Add(new SpeechSequence(s1));
+
+            List<SpeechInstance> s2 = new List<SpeechInstance>();
+            s2.Add(new SpeechInstance("This temple gets more and more interesting the deeper we go into the temple.", 6f, 6f, !c1));
+            s2.Add(new SpeechInstance("I’m surprised that you are able to keep going Professor.", 6f, 6f, c1));
+            s2.Add(new SpeechInstance("It’s only because it’s so exciting!", 6f, 6f, !c1));
+            output.Add(new SpeechSequence(s2));
+
+            List<SpeechInstance> s3 = new List<SpeechInstance>();
+            s3.Add(new SpeechInstance("There sure are a lot of dangerous traps in this temple.", 6f, 6f, c1));
+            s3.Add(new SpeechInstance("Yes, I am sorry I am putting you all through this, I didn’t think it would be so dangerous.", 6f, 6f, !c1));
+            s3.Add(new SpeechInstance("It’s okay, I am trained for these kinds of missions, I’m more worried about you guys.", 6f, 6f, c1));
+            s3.Add(new SpeechInstance("But you are here to protect us, aren’t you?", 6f, 6f, !c1));
+            output.Add(new SpeechSequence(s3));
+
+            List<SpeechInstance> s4 = new List<SpeechInstance>();
+            s4.Add(new SpeechInstance("Ugh! So many puzzles?!", 6f, 6f, c1));
+            s4.Add(new SpeechInstance("This is getting old fast...", 6f, 6f, c1));
+            s4.Add(new SpeechInstance("I know, but it will be worth it in the end.", 6f, 6f, !c1));
+            s4.Add(new SpeechInstance("Right...", 6f, 6f, c1));
+            output.Add(new SpeechSequence(s4));
         }
 
         return output;
