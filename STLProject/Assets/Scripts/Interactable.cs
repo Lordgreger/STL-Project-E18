@@ -36,4 +36,10 @@ public class Interactable : MonoBehaviour {
             }
         }
     }
+
+    public void removeInteractable() {
+        if (enabled) {
+            player.removeInteractable(this);
+        }
+    }
 }
