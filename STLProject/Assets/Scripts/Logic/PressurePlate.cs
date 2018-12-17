@@ -16,6 +16,15 @@ public class PressurePlate : BooleanLogic {
 
     int weight;
 
+    public AudioClip interactSound;
+    private AudioSource source;
+
+
+    private void Awake()
+    {
+        source = GetComponent<AudioSource>();
+    }
+
     private void Start() {
         if (companionInteractable != null) {
             companionInteractable.onInteract.AddListener(onCompanionInteract);
@@ -27,6 +36,9 @@ public class PressurePlate : BooleanLogic {
 
     void updateVisuals(bool state) {
         if (state) {
+            if(rend.sprite==offSprite){
+                source.PlayOneShot(interactSound,0.5f);
+            }
             rend.sprite = onSprite;
         }
         else {

@@ -12,6 +12,15 @@ public class TimedPressurePlateDoor : MonoBehaviour {
     public Sprite open;
     public Sprite closed;
 
+    public AudioClip doorSound;
+    private AudioSource source;
+
+
+    private void Awake()
+    {
+        source = GetComponent<AudioSource>();
+    }
+
     private void Start() {
         foreach(BooleanLogic l in plates) {
             l.onChange.AddListener(checkSolution);
@@ -24,6 +33,9 @@ public class TimedPressurePlateDoor : MonoBehaviour {
             if (!l.getState()) {
                 return;
             }
+        }
+        if(rend.sprite==closed){
+            source.PlayOneShot(doorSound);
         }
         col.enabled = false;
         rend.sprite = open;

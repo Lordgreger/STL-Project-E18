@@ -8,11 +8,22 @@ public class ArrowCreator : MonoBehaviour {
     public float damage, lifetime, speed;
     public Vector3 target;
 
-	public void createArrow() {
+    public AudioClip fireArrowSound;
+    private AudioSource source;
+
+
+    private void Awake()
+    {
+        source = GetComponent<AudioSource>();
+    }
+
+
+    public void createArrow() {
         GameObject arrow = Instantiate(arrowPrefab);
+        source.PlayOneShot(fireArrowSound);
+        arrow.gameObject.tag = "flyingSpear";
         arrow.transform.position = this.transform.position;
         arrow.GetComponent<Arrow>().setupArrow(target, speed, lifetime, damage);
-
     }
 
 }

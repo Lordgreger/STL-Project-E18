@@ -11,6 +11,15 @@ public class LeverDoor : MonoBehaviour {
     public Sprite open;
     public Sprite closed;
 
+    public AudioClip doorSound;
+    private AudioSource source;
+
+
+    private void Awake()
+    {
+        source = GetComponent<AudioSource>();
+    }
+
     private void Start() {
         foreach(BooleanLogic lever in levers) {
             lever.onChange.AddListener(checkLevers);
@@ -30,6 +39,9 @@ public class LeverDoor : MonoBehaviour {
 
     protected void setDoor(bool isOpen) {
         if (isOpen) {
+            if(rend.sprite==closed){
+                source.PlayOneShot(doorSound);
+            }
             rend.sprite = open;
             col.enabled = false;
         }

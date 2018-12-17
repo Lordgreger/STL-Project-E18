@@ -19,12 +19,43 @@ public class CompanionMovement : MonoBehaviour {
     [HideInInspector]
     public UnityEvent onStateChange;
 
+    private Animator animator;
+
+
     private void Start() {
         state = State.following;
+        animator = GetComponent<Animator>();
+
     }
 
     private void Update() {
         runState();
+        float angle = Mathf.Atan2(rb.velocity.y, rb.velocity.x);
+        if (rb.velocity.magnitude > 0.0f)
+        {
+            if (((Mathf.PI) / 4) < angle && angle < (3 * (Mathf.PI) / 4))
+            {
+                animator.SetTrigger("PlayerWalkUp");
+            }
+            if (-((Mathf.PI) / 4) > angle && angle > -(3 * (Mathf.PI) / 4))
+            {
+                animator.SetTrigger("PlayerWalkDown");
+            }
+            if (-((Mathf.PI) / 4) < angle && angle < ((Mathf.PI) / 4))
+            {
+                animator.SetTrigger("PlayerWalkRight");
+            }
+            if (angle > (3 * (Mathf.PI) / 4) || angle < -(3 * (Mathf.PI) / 4))
+            {
+                animator.SetTrigger("PlayerWalkLeft");
+            }
+        }
+        else
+        {
+            animator.SetTrigger("PlayerIdle");
+
+        }
+
 
         /*
         if (Input.GetKeyDown(KeyCode.Q)) {

@@ -8,8 +8,21 @@ public class LogicDoor : MonoBehaviour {
     public Sprite open;
     public Sprite closed;
 
+    public AudioClip doorSound;
+    private AudioSource source;
+
+
+    private void Awake()
+    {
+        source = GetComponent<AudioSource>();
+    }
+
+
     protected void setDoor(bool isOpen) {
         if (isOpen) {
+            if(rend.sprite==closed){
+                source.PlayOneShot(doorSound);
+            }
             rend.sprite = open;
             col.enabled = false;
         }

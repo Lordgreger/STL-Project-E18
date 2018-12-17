@@ -10,8 +10,14 @@ public class PlayerMovement : MonoBehaviour {
 
     float currentSpeed;
 
-    void Start() {
+    private Animator animator;
+
+
+    void Start()
+    {
         currentSpeed = speed;
+
+        animator = GetComponent<Animator>();
     }
 
     void Update () {
@@ -23,7 +29,33 @@ public class PlayerMovement : MonoBehaviour {
             input = input.normalized;
 
         rb.velocity = input * currentSpeed;
-	}
+        float angle = Mathf.Atan2(rb.velocity.y, rb.velocity.x);
+        if (rb.velocity.magnitude > 0.0f)
+        {
+            if (((Mathf.PI) / 4) < angle && angle < (3 * (Mathf.PI) / 4))
+            {
+                animator.SetTrigger("PlayerWalkUp");
+            }
+            if (-((Mathf.PI) / 4) > angle && angle > -(3 * (Mathf.PI) / 4))
+            {
+                animator.SetTrigger("PlayerWalkDown");
+            }
+            if (-((Mathf.PI) / 4) < angle && angle < ((Mathf.PI) / 4))
+            {
+                animator.SetTrigger("PlayerWalkRight");
+            }
+            if (angle > (3 * (Mathf.PI) / 4) || angle < -(3 * (Mathf.PI) / 4))
+            {
+                animator.SetTrigger("PlayerWalkLeft");
+            }
+        }
+        else
+        {
+            animator.SetTrigger("PlayerIdle");
+
+        }
+
+    }
 
     public void addTimedSlowEffect(float time) {
         StartCoroutine(slowEffect(time));

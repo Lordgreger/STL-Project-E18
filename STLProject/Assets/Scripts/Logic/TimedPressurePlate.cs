@@ -9,8 +9,21 @@ public class TimedPressurePlate : TimedBooleanLogic {
 
     public SpriteRenderer rend;
 
+    public AudioClip interactSound;
+    private AudioSource source;
+
+
+    private void Awake()
+    {
+        source = GetComponent<AudioSource>();
+    }
+
+
     void updateVisuals(bool state) {
         if (state) {
+            if(rend.sprite==offSprite){
+                source.PlayOneShot(interactSound, 0.5f);
+            }
             rend.sprite = onSprite;
         }
         else {

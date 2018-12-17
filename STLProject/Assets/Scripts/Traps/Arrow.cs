@@ -8,12 +8,22 @@ public class Arrow : MonoBehaviour {
     float lifetime, damage;
     bool active = false;
 
+    public AudioClip arrowSound;
+    private AudioSource source;
+
+
+    private void Awake()
+    {
+        source = GetComponent<AudioSource>();
+    }
+
     public void setupArrow(Vector3 target, float speed, float lifetime, float damage) {
         pointTowardsTarget(target);
         rb.velocity = (target - transform.position).normalized * speed;
         this.lifetime = lifetime;
         this.damage = damage;
         active = true;
+        source.PlayOneShot(arrowSound);
     }
 
     void pointTowardsTarget(Vector3 target) {

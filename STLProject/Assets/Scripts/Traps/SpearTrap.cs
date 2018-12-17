@@ -11,6 +11,15 @@ public class SpearTrap : BaseTrapFloor {
     public Sprite triggered;
     public SpriteRenderer rend;
 
+    public AudioClip floorspearSound;
+    private AudioSource source;
+
+
+    private void Awake()
+    {
+        source = GetComponent<AudioSource>();
+    }
+
     private void Start() {
         StartCoroutine(checkTrap());
     }
@@ -27,6 +36,7 @@ public class SpearTrap : BaseTrapFloor {
                     }
                     //print("Damaged " + h.gameObject.tag + " with " + damage);
                 }
+                source.PlayOneShot(floorspearSound,0.4f);
                 rend.sprite = triggered;
                 yield return new WaitForSeconds(damageCooldown * (3f / 4f));
                 rend.sprite = notTriggered;

@@ -25,6 +25,7 @@ TagManager:
   - Placeholders
   - Tablets
   - CirclePlate
+  - flyingSpear
   layers:
   - Default
   - TransparentFX

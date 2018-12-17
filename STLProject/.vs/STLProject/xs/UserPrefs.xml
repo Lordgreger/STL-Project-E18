@@ -1,16 +1,13 @@
 ﻿<Properties StartupConfiguration="{6FFD648D-2ADD-E9C7-4E45-6F50E484FD13}|">
   <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="Unity.Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/AltInteractable.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Logic/ToggleDoor.cs">
     <Files>
-      <File FileName="Assets/Scripts/Logic/PressurePlateCheck.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/Logic/PressurePlate.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/Logic/RiddleTablets.cs" Line="55" Column="6" />
-      <File FileName="Assets/Scripts/Logic/RiddleInsert.cs" Line="51" Column="27" />
-      <File FileName="Assets/Scripts/Logic/RiddleController.cs" Line="23" Column="45" />
-      <File FileName="Assets/Scripts/Logic/RiddleDrop.cs" Line="15" Column="36" />
-      <File FileName="Assets/RiddleElement.cs" Line="7" Column="12" />
-      <File FileName="Assets/Scripts/AltInteractable.cs" Line="41" Column="1" />
-      <File FileName="Assets/Scripts/Interactable.cs" Line="8" Column="5" />
+      <File FileName="Assets/Scripts/Player/PlayerMovement.cs" Line="21" Column="6" />
+      <File FileName="Assets/InteractSound.cs" Line="8" Column="1" />
+      <File FileName="Assets/Scripts/Player/Footsteps.cs" Line="19" Column="71" />
+      <File FileName="Assets/Scripts/Logic/LeverScript.cs" Line="30" Column="55" />
+      <File FileName="Assets/PlaySoundtrack.cs" Line="13" Column="46" />
+      <File FileName="Assets/Scripts/Logic/ToggleDoor.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
