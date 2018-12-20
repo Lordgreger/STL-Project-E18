@@ -65303,7 +65303,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tracks:
   - {fileID: 8300000, guid: 75d5cdd907a0142b4bc107083d44bd4b, type: 3}
-  - {fileID: 8300000, guid: 77fbb0a8abba14ee4bd40000f1f5d8d6, type: 3}
 --- !u!82 &1222986187
 AudioSource:
   m_ObjectHideFlags: 0
